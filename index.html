@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer>
+  </script>
+  <title>Edgar A. Espinosa</title>
+</head>
+<body class="bg-gray-100 dark:bg-neutral-950 dark:text-neutral-300 antialiased sm:px-2">
+
+  <aside id="top" class="relative md:fixed w-full fixed top-0 left-0 z-40 md:w-96 md:h-screen transition-transform git sm:translate-x-0 pl-10" aria-label="Sidebar">
+    <div class="h-full overflow-y-auto bg-gray-50 dark:bg-neutral-950">
+      <div class="pt-20 pl-10">
+          <div class="md:shrink-0">
+            <img class="object-cover rounded-full aspect-square h-36 w-36 grayscale" src="img/profile.jpg" alt="profile image"/>
+          </div>
+        <div class="gap-20 flex-grow">
+          <h1 class="pt-10 font-bold text-2xl">Edgar A. Espinosa</h1>
+        </div>
+        <div class="gap-20 flex-grow">
+          <p class="font-semibold">Arquitecto</p>
+        </div>
+        <div class="dark:text-red-600 mt-2 gap-10 md:block font-normal md:space-x-0 > * + * space-x-2.5 > * + *">
+          <a class="md:block inline hover:underline hover:underline-offset-4 hover:decoration-1 dark:hover:text-neutral-200" href="tel:8182703324">Teléfono</a>
+          <a class="md:block inline hover:underline hover:underline-offset-4 hover:decoration-1 dark:hover:text-neutral-200" href="mailto:edgarespinosa@outlook.com">Email</a>
+          <a class="md:block inline hover:underline hover:underline-offset-4 hover:decoration-1 dark:hover:text-neutral-200" href="https://mx.linkedin.com/in/edgarespinosa" target="_blank">LinkedIn</a>
+          <a class="md:block inline hover:underline hover:underline-offset-4 hover:decoration-1 dark:hover:text-neutral-200" href="./img/CV_EdgarAEspinosa.pdf" target="_blank">CV</a>
+          <button id="theme-toggle" type="button" class="dark:bg-transparent  dark:hover:text-white hover:text-gray-900 rounded-lg text-sm " @click="open = !open">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" 
+            fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </div> 
+      </div>
+    </div>
+  </aside>
+
+  <!-- <div class="bg-gray-100 dark:bg-gray-300">
+    <div class="w-full text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
+      <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="flex flex-row items-center justify-end p-4">
+          <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white">Edgar A. Espinosa</a>
+          <button class="rounded-lg md:hidden" @click="open = !open">
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+          <a class="px-4 py-2 mt-2 text-md font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:underline hover:underline-offset-4 hover:decoration-1"  href="./img/CV_EdgarAEspinosa.pdf" target="_blank">CV</a>
+          <a class="px-4 py-2 mt-2 text-md font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:underline hover:underline-offset-4 hover:decoration-1" href="tel:8182703324">Teléfono</a>
+          <a class="px-4 py-2 mt-2 text-md font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:underline hover:underline-offset-4 hover:decoration-1" href="mailto:edgarespinosa@outlook.com">Email</a>
+          <a class="px-4 py-2 mt-2 text-md font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900" href="https://mx.linkedin.com/in/edgarespinosa" target="_blank">LinkedIn</a>   
+          <button id="theme-toggle" type="button" class="dark:bg-transparent  dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 rounded-lg text-sm p-2.5" @click="open = !open">
+          <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" 
+          fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="p-20 xl:px-80 flex flex-col items-start bg-gray-50 dark:bg-neutral-900">
+    <div class="gap-20 flex-grow">
+        <div class="md:shrink-0">
+          <img class="object-cover rounded-full aspect-square h-36 w-36 grayscale" src="../img/profile.jpg" alt="profile image"/>
+        </div>
+    </div>
+    <div class="ap-20 flex-grow">
+        <h1 class="pt-10 font-bold text-2xl">Edgar A. Espinosa</h1>
+    </div>
+    <div class="gap-20 flex-grow">
+        <p class="font-semibold">Arquitecto</p>
+    </div>
+  </div> -->
+
+  <div class="p-20 xl:px-80 gap-20 flex-grow bg-gray-50 dark:bg-neutral-950 md:flex">
+    
+    <div class="w-full flex-wrap mt-0 md:pt-0 md:pl-80 xl:pl-48 md:mt-32">
+        <h2 class="pb-5 text-3xl lg:text-4xl font-semibold text-slate-800      dark:text-gray-200">Soy Edgar A. Espinosa<br> <span class="font-semibold lg:text-2xl text-xl">- Hago supervisión de construcción y coordinación de obras y remodelaciones.</span></h2>
+          <p class="text-lg lg:text-xl whitespace-normal font-normal text-gray-900 dark:text-gray-200">Nacido en la ciudad de Tampico, Tam. Actualmente vivo en Monterrey, NL. Estudié la carrera de Arquitectura en el Tecnológico de Monterrey Campus Monterrey. Realicé posteriormente algunos cursos de la Maestría en Administración (MBA) en la EGADE Business School a lo largo de varios años. En 2023 concluí la Maestría en Tecnologías de la Información en la UNID. <br>
+          A lo largo de mi carrera profesional he trabajado en diferentes aspectos de la construcción, desde el diseño de proyecto hasta la ejecución en campo, pasando por la coordinación administrativa de obra y licitaciones y adquisiciones. <br>
+          Me apasiona aprender, esta página es una muestra de algunas habilidades de desarrollo web que he adquirido a través del autoaprendizaje en MOOCs y tutoriales. Uno de mis principales hobbies es correr, a la fecha he concluido 7 maratones, con un record personal de 3 hrs:46 min.
+          </p>
+          <span class="text-gray-900 dark:text-neutral-300">
+          <svg class="h-300 w-80 stroke-0" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	        width="100%" viewBox="0 0 1024 448" enable-background="new 0 0 1024 448" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" opacity="1.000000" stroke="none" d="M220.485138,263.822205 C232.897125,268.429230 244.918167,273.259918 257.508026,275.860535 C263.832886,277.167023 270.107117,278.976807 276.822113,279.265411 C284.139557,279.579926 291.434265,281.756470 298.884338,282.398468 C311.741943,283.506500 324.566010,285.003174 337.404114,286.337189 C349.260101,287.569122 361.107452,288.891846 372.973755,290.014740 C396.089050,292.202087 419.279480,292.769379 442.481476,293.095093 C449.934570,293.199677 457.382080,293.661194 464.834900,293.850494 C467.372040,293.914886 470.385681,293.760468 470.499329,290.430054 C470.609650,287.196411 468.171997,286.183502 465.081696,285.940613 C456.611328,285.274872 448.156738,284.330872 439.741486,286.312958 C437.054016,286.946014 434.767151,285.704742 432.631775,284.609283 C430.011841,283.265198 430.027100,279.495575 432.295471,277.550964 C434.825867,275.381714 437.643890,274.477417 441.042847,274.753448 C448.495819,275.358643 455.951233,276.147461 463.449585,275.826813 C469.181091,275.581726 471.229156,272.149292 468.941498,266.859436 C467.231018,262.904236 467.585999,258.673035 467.871002,254.567352 C468.111969,251.095322 471.308197,250.044632 474.023926,249.657288 C477.022125,249.229630 479.929688,250.332535 481.402771,253.408508 C483.753418,258.316895 485.013855,263.311066 483.134338,268.793610 C481.352905,273.990082 482.334076,275.514221 487.853180,275.792908 C510.782532,276.950745 533.686890,277.384491 556.631958,275.332520 C565.826904,274.510223 575.153137,274.750793 584.411987,274.117645 C586.434570,273.979340 587.750671,273.490387 589.176880,272.148468 C591.401184,270.055542 594.450195,269.658844 597.076904,270.665039 C599.366943,271.542297 599.911194,274.217316 599.903625,276.638397 C599.893616,279.844269 597.715271,281.234558 595.046387,282.225677 C589.131165,284.422302 582.894531,283.717834 576.809082,284.207794 C551.981018,286.206848 527.072144,286.211456 502.190582,286.839600 C497.555634,286.956573 492.902557,286.403839 488.259491,286.132416 C485.517548,285.972168 482.789398,286.460114 482.802216,289.700012 C482.814514,292.792664 485.154266,293.190552 488.121307,293.174316 C521.674316,292.990662 555.230347,292.788605 588.781494,293.071442 C604.377686,293.202911 619.927002,292.561371 635.497314,292.090057 C658.909485,291.381439 682.297791,293.761871 705.719971,292.852753 C709.708618,292.697937 713.703186,292.591797 717.693787,292.623718 C720.903259,292.649384 721.601807,291.179474 721.229126,288.198608 C719.415283,273.689789 716.456360,259.356598 714.399353,244.911346 C712.348328,230.507492 710.296814,215.935150 711.898621,201.249939 C712.328918,197.304947 714.071411,194.514877 718.536133,194.839355 C722.898376,195.156403 726.081604,198.600296 724.937500,202.671188 C721.191528,216.000076 724.262939,229.080261 725.696899,242.238968 C727.373169,257.621582 731.269958,272.626373 733.472961,287.917999 C733.937439,291.141937 735.843445,292.602814 738.844543,292.699921 C747.278687,292.972931 755.549377,292.044312 763.858337,290.309479 C769.489990,289.133606 775.738464,286.215790 781.023865,292.358917 C783.077942,294.746246 782.961060,296.367767 781.439575,298.400604 C778.784485,301.948059 775.040771,302.802765 770.794312,302.550751 C761.657715,302.008423 752.514648,301.563141 743.370483,301.164459 C737.799133,300.921539 736.524353,301.882935 737.270203,307.400146 C738.309753,315.090515 740.314087,322.645905 741.517944,330.319885 C742.700195,337.856598 743.722473,345.400604 746.305237,352.625549 C746.636230,353.551422 746.713501,354.746613 747.350220,355.352966 C749.827515,357.712036 750.309998,360.599976 748.129822,362.861145 C746.112793,364.953156 743.749268,367.657990 739.971069,366.286224 C736.651367,365.080933 734.603516,363.533173 734.440613,359.262878 C734.228210,353.694855 732.885681,348.119415 731.579529,342.654694 C729.217529,332.772156 728.122742,322.707977 726.672058,312.688110 C726.247620,309.756409 725.373108,306.875793 724.533813,304.022095 C723.679626,301.117798 721.226685,301.200989 718.827026,301.249420 C706.231689,301.503876 693.602539,302.426514 681.048279,301.816620 C661.892456,300.885986 642.721802,300.564667 623.625732,301.502472 C600.844421,302.621246 578.087341,301.904694 555.323608,302.264313 C537.749329,302.541962 520.168213,302.416229 502.590271,302.394592 C498.969727,302.390137 495.370331,302.702026 491.725739,302.602844 C486.620483,302.463867 485.313538,304.907074 486.768799,309.757324 C489.341614,318.332306 492.041840,326.881409 492.810181,335.875488 C492.866791,336.538116 492.993591,337.198273 493.003510,337.860809 C493.069000,342.221130 490.586548,345.593201 487.218994,345.752869 C483.519775,345.928284 479.255707,342.098511 479.758881,338.078003 C480.970276,328.398865 477.874023,319.413361 476.023865,310.226532 C474.858673,304.440735 472.849792,303.083893 466.904907,302.945709 C440.885834,302.340881 414.846710,301.950287 388.887848,300.086334 C369.190765,298.671967 349.585938,296.005676 329.897797,294.421967 C316.356232,293.332703 302.881165,291.617462 289.326752,290.583954 C277.691833,289.696777 266.163940,286.985016 254.648376,284.571716 C239.753510,281.450226 225.483505,276.414917 212.175919,269.725433 C201.776840,264.497986 191.692688,257.088013 187.828308,244.568542 C187.212524,242.573578 186.980133,240.731705 187.355103,238.714844 C188.026047,235.106110 188.413681,231.521820 187.076416,227.914459 C185.424057,223.457230 188.595016,220.124588 190.601303,217.008286 C197.657700,206.047867 206.738892,197.036682 217.495346,189.465347 C222.902573,185.659241 228.340042,181.850525 233.660873,177.919418 C236.701218,175.673157 240.271576,175.224731 243.444580,173.379425 C253.755447,167.382965 264.425262,162.098312 275.876709,158.214249 C282.352631,156.017746 288.651917,155.014313 295.256470,154.710831 C299.392334,154.520782 301.123749,152.312515 299.172577,148.663269 C297.418976,145.383499 296.805481,141.833618 295.565979,138.452026 C294.523743,135.608551 294.617035,133.899948 297.683441,132.474915 C301.024933,130.922058 303.182190,131.899719 304.690369,134.812958 C305.985077,137.313873 307.226959,139.904251 308.012238,142.595123 C310.358246,150.633942 313.563538,158.144302 319.746277,164.063141 C320.103607,164.405182 320.380890,164.835052 320.673279,165.240036 C323.039215,168.516754 323.898438,171.932999 320.843323,175.181229 C319.230957,176.895523 313.197296,175.228348 311.058044,172.561478 C309.923370,171.146988 308.952789,169.546555 308.186951,167.900360 C305.430450,161.974762 301.909821,160.474426 295.506866,161.577957 C270.927551,165.814087 249.650513,177.651199 229.307953,191.070175 C216.969055,199.209564 206.374802,209.675461 198.708969,222.687439 C194.373077,230.047165 195.743683,241.671768 200.966995,248.426132 C206.187393,255.176697 213.170547,259.338959 220.485138,263.822205 z"/><path fill="currentColor" opacity="1.000000" stroke="none" d="M771.121826,261.980408 C773.330750,257.660309 776.624512,257.146240 780.400635,258.935913 C784.084961,260.682037 783.906250,264.302246 783.851990,267.548615 C783.814819,269.772675 781.700317,270.779755 779.930542,271.677155 C777.968018,272.672272 776.809753,271.104584 775.737244,269.918152 C773.734192,267.702301 771.913696,265.330994 771.121826,261.980408 z"/><path fill="currentColor" opacity="1.000000" stroke="none" d="M520.898560,253.582642 C525.738831,249.551651 530.740967,250.599136 533.603638,256.019714 C534.932007,258.535034 533.376709,260.071075 531.576660,261.361786 C528.894836,263.284698 526.052551,262.865265 523.837524,260.812286 C521.919312,259.034363 518.152649,257.699738 520.898560,253.582642 z"/></svg></span>
+    </div>
+  </div>
+</div>
+
+<div class="p-20 pt-0 xl:px-80 gap-20 flex-grow bg-gray-50 dark:bg-neutral-950 md:flex">
+    <div class="w-full flex-wrap mt-0 md:pt-0 md:pl-80 xl:pl-48 md:mt-32">
+        <h2 class="pb-5 text-xl font-semibold text-slate-800 dark:text-neutral-300 uppercase tracking-tight">Experiencia Profesional</h2>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Supervisor de Construcción | Industrial Afiliada, S.A. de C.V. </span><br><span class="text-md font-normal">Desde 23/05/2018</span><br>Aquí he tenido la oportunidad de desarrollar más ampliamente mi experiencia como supervisor de construcción viendo obras de remodelación y nuevas de Centros de Atención a Clientes (CACs) de Telcel en diferentes zonas del país, entre las que destacan el cambio de imagen del <!-- delicias-modal toggle --><a class="underline underline-offset-4 hover:font-medium hover:cursor-pointer hover:no-underline" data-modal-target="delicias-modal" data-modal-toggle="delicias-modal">CAC Delicias I</a> en Delicias, Chihuahua y la construcción del <!-- tepeyac-modal toggle --><a class="underline underline-offset-4 hover:font-medium hover:cursor-pointer hover:no-underline" data-modal-target="tepeyac-modal" data-modal-toggle="tepeyac-modal">CAC Tepeyac</a> en Ciudad de México.
+        </p>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Especialista Comprador | Direccción de Abastecimiento Estratégico del Tecnológico de Monterrey</span><br><span class="text-md font-normal">01/10/2011 - 15/09/2014</span><br>El objetivo principal del puesto era abastecer de proveedores de productos y servicios a la Dirección de Construcción de Sorteos Tec para la construcción de las residencias del Primer Premio del Tradicional Sorteo Tec. Las actividades también incluían desarrollar, proveer y supervisar otros proyectos de construcción y mantenimiento del Sorteo Tec.
+        </p>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Arquitecto Especialista | Dirección de Construcción de Sorteos Tec</span><br><span class="text-md font-normal">01/08/2010 - 30/09/2011 & 01/05/2005 - 31/08/2007</span><br>El puesto se centraba en la elaboración y gestión de la información requerida para llevar a cabo los concursos para la asignación de proveedores para la construcción de la residencia del Primer Premio del Tradicional Sorteo Tec.
+        </p>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Administrador de Propiedad | Marina Mia Condos, A.C.</span><br><span class="text-md font-normal">01/02/2009 - 31/07/2010</span><br>Atendía las solicitudes de los usuarios y propietarios de un edificio en condominio de 56 unidades ubicado en el desarrollo Puerto Aventuras en Playa del Carmen, QR. Asimismo, llevaba la coordinación del equipo de trabajo de mantenimiento y seguridad del edificio así como la administación de cuotas.
+        </p>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Coordinador Administrativo | Órigo Developers</span><br><span class="text-md font-normal">001/09/2007 - 31/12/2009</span><br>El puesto se centraba en los controles presupestal y contractual de la construcción de un edificio en condominio ubicado en el desarrollo Playacar en Playa del Carmen, QR. De igual manera, desarrollé actividades de supervisión y manejo de contratistas.
+        </p>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Profesionista de Apoyo (Arquitecto) | Departamento de Proyectos Arquitectónicos del Tecnológico de Monterrey Campus Monterrey</span><br><span class="text-md font-normal">15/01/2001 - 31/12/2003</span><br>Trabajé desarrollando proyectos de remodelación, adecuaciones y mantemiento de las instalaciones del Campus. Participé en el desarrollo de la extensión Campus Norte que incluyó el diseño y supervisión del comedor ubicado en el mismo.
+        </p>
+        <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200"><span class="font-roboto tracking-tight text-xl font-medium">Coordinador de Proyecto | Consorcio Americano de Proyectos y Construcción, S.A.</span><br><span class="text-md font-normal">05/02/2000 - 31/12/2000</span><br>El puesto se centraba en la administración y generación de la información relativa al proyecto, una nave insdutrial en Ébano, SLP, así como visitas de obra para revisión de avances con la supervisión interna del cliente.
+        </p>
+    </div>
+    <div class="text-end">
+      <p class="md:hidden"><a href="#top">&uarr;</a></p>
+    </div>
+</div>
+
+<!-- Delicias Main modal -->
+<div id="delicias-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-4 w-full max-w-2xl max-h-full">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <!-- Modal header -->
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+              <h3 class="text-md font-medium text-gray-900 dark:text-white">
+                  CAC Delicias I. <span class="text-md font-light">Delicias, Chihuahua (octubre 2022 - marzo 2023)</span>
+              </h3>
+              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="delicias-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+              </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-4 md:p-5 space-y-4">
+              
+          <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative h-64 overflow-hidden rounded-lg md:h-80">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <img src="img/del01.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/del03.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/del05.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/del08.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 5 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/del10.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 6 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/del12.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+          </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Tepeyac Main modal -->
+<div id="tepeyac-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-md font-medium text-gray-900 dark:text-white">
+                    CAC Tepeyac. <span class="text-md font-light">Parque Tepeyac, Gustavo A. Madero, CDMX (agosto - noviembre 2023)</span>
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="tepeyac-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                
+            <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+              <!-- Carousel wrapper -->
+              <div class="relative h-64 overflow-hidden rounded-lg md:h-80">
+                  <!-- Item 1 -->
+                  <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                      <img src="img/Tep01.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src="img/Tep03.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                  </div>
+                  <!-- Item 3 -->
+                  <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src="img/Tep08.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                  </div>
+                  <!-- Item 4 -->
+                  <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src="img/Tep11.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                  </div>
+                  <!-- Item 5 -->
+                  <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src="img/Tep12.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                  </div>
+                  <!-- Item 6 -->
+                  <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                      <img src="img/Tep15.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+              </div>
+              <!-- Slider indicators -->
+              <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                  <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                  <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                  <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                  <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                  <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                  <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="5"></button>
+              </div>
+              <!-- Slider controls -->
+              <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                  <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                      <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                      </svg>
+                      <span class="sr-only">Previous</span>
+                  </span>
+              </button>
+              <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                  <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                      <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                      </svg>
+                      <span class="sr-only">Next</span>
+                  </span>
+              </button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="p-20 pt-0 xl:px-80 gap-20 flex-grow bg-gray-50 dark:bg-neutral-950 md:flex">
+  <div class="w-full flex-wrap mt-0 md:pt-0 md:pl-80 xl:pl-48 md:mt-32">
+      <h2 class="pb-5 text-xl font-semibold text-slate-800 dark:text-neutral-300 uppercase tracking-tight">Intereses</h2>
+      <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight text-xl"><span class="">Correr</span>
+      </p>
+      <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight text-xl"><span class="">Cine</span>
+      </p>
+      <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight text-xl"><span class="">Tenis</span>
+      </p>
+      <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight text-xl"><span class="">Aprender</span>
+      </p>
+      <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight text-xl"><span class="">Música</span>
+      </p>
+      <p class="mb-4 text-md lg:text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight text-xl"><span class="">Desarrollo Web</span>
+      </p>
+  </div>
+  <div class="text-end">
+    <p class="md:hidden"><a href="#top">&uarr;</a></p>
+  </div>
+</div>
+
+<footer class="p-4 text-gray-500 bg-white dark:text-gray-200 dark:bg-neutral-950">
+    <div class="py-2 px-4 md:flex items-center md:justify-between">
+        <span class="md:pl-96 text-gray-500 sm:text-center">© 2024 Edgar A. Espinosa</span>
+        <div class="flex mt-4 space-x-4 sm:justify-center md:mt-0">
+          <a href="tel:8182703324" class="text-gray-400 hover:text-gray-700 dark:hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+            </svg>
+          </a>
+          <a href="mailto:edgarespinosa@outlook.com" class="text-gray-400 hover:text-gray-700 dark:hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg>
+            </a>         
+            <a href="https://mx.linkedin.com/in/edgarespinosa" class="text-gray-400 hover:text-gray-700 dark:hover:text-white">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" clip-rule="evenodd" /></svg>
+            </a>          
+        </div>
+    </div>
+</footer>
+
+</div>
+
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</body>
+</html>
