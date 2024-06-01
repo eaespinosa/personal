@@ -10,6 +10,9 @@ module.exports = {
        screens: { 'xs': { 'max': '640px' },
                   'sm': { 'max': '768px' },
        },
+       colors: {
+        'shade': '#f8f6f2',
+       },
   },
   plugins: [],
 }
