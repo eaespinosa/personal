@@ -30,7 +30,7 @@
     <div class="w-full text-gray-700 dark:text-gray-200">
       <div x-data="{ open: false }" class="flex flex-col max-w-screen-2xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 xl:px-8">
         <div class="flex flex-row items-center justify-between p-4">
-          <a href="#" class="text-xl font-bold tracking-widest text-neutral-900 uppercase dark:text-neutral-400">Edgar A. Espinosa</a>
+          <a href="#" class="text-xl font-light text-neutral-900 uppercase dark:text-neutral-400 font-mono tracking-tighter"><span class="font-semibold">Edgar</span>Espinosa</a>
           <button class="rounded-lg md:hidden" @click="open = !open">
             <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
               <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 
@@ -41,7 +41,7 @@
           </button>
         </div>
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow text-sm hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row font-mono uppercase">
-          <a class="group px-4 py-2 mt-2 text-md sm:text-sm tracking-tighter bg-transparent dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900" href="tel:8182703324" @click="open = !open">Teléfono<div class="bg-neutral-900 dark:bg-white h-[1px] w-0 group-hover:w-full transition-all duration-500"></div></a>
+          <a class="group px-4 py-2 mt-2 text-md sm:text-sm tracking-tighter bg-transparent dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900" href="tel:8182703324" @click="open = !open">Tel&eacute;fono<div class="bg-neutral-900 dark:bg-white h-[1px] w-0 group-hover:w-full transition-all duration-500"></div></a>
           <a class="group px-4 py-2 mt-2 text-md sm:text-sm tracking-tighter bg-transparent dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900" href="mailto:edgarespinosa@outlook.com" @click="open = !open">Email<div class="bg-neutral-900 dark:bg-white h-[1px] w-0 group-hover:w-full transition-all duration-500"></div></a>
           <a class="group px-4 py-2 mt-2 text-md sm:text-sm tracking-tighter bg-transparent dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900" href="https://mx.linkedin.com/in/edgarespinosa" target="_blank" @click="open = !open">LinkedIn<div class="bg-neutral-900 dark:bg-white h-[1px] w-0 group-hover:w-full transition-all duration-500"></div></a>
           <a class="group px-4 py-2 mt-2 text-md sm:text-sm tracking-tighter bg-transparent dark:bg-transparent dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900" href="./img/CV_EdgarAEspinosa.pdf" target="_blank" @click="open = !open">CV<div class="bg-neutral-900 dark:bg-white h-[1px] w-0 group-hover:w-full transition-all duration-500"></div></a>
@@ -60,70 +60,77 @@
     </div>
   </div>
 
+<<<<<<< HEAD
 <main>
 
   <section class="body-font text-slate-800 dark:text-neutral-300 ">
+=======
+    <section class="lg:text-base min-h-screen">
+>>>>>>> 45e2ed51f3eb9acab27ed381ea336956eb93a7b5
     <div class="container mx-auto flex flex-col px-5 py-24">
       <div class="mx-auto xl:w-4/6">
-        <div class="h-80 md:h-96 overflow-hidden">
+        <div class="h-80 md:h-96 lg:h-[28rem] overflow-hidden">
           <img alt="content" class="h-full w-full grayscale object-cover object-top lg:object-top" src="img/profile_img.png" />
         </div>
         <div class="mt-10 flex sm:flex-col flex-row">
           <div class="md:w-1/3 w-full py-8 pr-8">
             <div class="flex flex-col items-center justify-center text-end sm:text-start">
-              <p class="text-xl font-medium">Soy Edgar A. Espinosa, <br> Arquitecto supervisor de construcción, realizo coordinación de obras y remodelaciones.</p>
+              <p class="font-mono uppercase sm:text-left">Arquitecto radicado en Monterrey</p>
+              <p class="pt-6 text-xl font-medium">Me entusiasma la construcci&oacute;n, realizo coordinaci&oacute;n de obras y remodelaciones. Apasionado por el dise&ntilde;o minimalista y por el cumplimiento de las metas.</p>
             </div>
           </div>
           <div class="mt-4 pt-4 text-left sm:mt-0 md:w-2/3 w-full sm:py-8 md:pl-8 sm:text-left md:columns-2 sm:columns-2 xs:columns-1">
-            <p class="text-md mb-4 leading-relaxed">Nací en Tampico, Tam., pero actualmente resido en Monterrey, NL. Graduado del Tecnológico de Monterrey Campus Monterrey, he complementado mi formación con cursos de la Maestría en Administración (MBA) en la EGADE Business School a lo largo de varios años. En 2023, completé la Maestría en Tecnologías de la Información en la UNID.</p>
-            <p class="text-md mb-4 leading-relaxed">Mi experiencia profesional abarca diversos aspectos de la construcción, desde el diseño de proyectos hasta la ejecución en campo, incluyendo la coordinación administrativa de obra y la gestión de licitaciones y adquisiciones.</p>
-            <p class="text-md mb-4 leading-relaxed">Me apasiona el aprendizaje autodidacta, lo que me ha permitido adquirir habilidades en desarrollo web a través de MOOCs y tutoriales. Uno de mis principales pasatiempos es correr, habiendo completado hasta la fecha 7 maratones, con un récord personal de 3 horas y 46 minutos. Ambas características destacan dos de mis principales valores: el compromiso y la disciplina.</p>
+            <p class="text-md mb-4 leading-relaxed">Nac&iacute; en Tampico, Tamaulipas. Graduado del Tecnol&oacute;gico de Monterrey Campus Monterrey, he complementado mi formaci&oacute;n con cursos de la Maestr&iacute;a en Administraci&oacute;n (MBA) en la EGADE Business School a lo largo de varios a&ntilde;os. En 2023, complet&eacute; la Maestr&iacute;a en Tecnolog&iacute;as de la Informaci&oacute;n en la UNID.</p>
+            <p class="text-md mb-4 leading-relaxed">Mi experiencia profesional abarca diversos aspectos de la construcci&oacute;n, desde el dise&ntilde;o de proyectos hasta la ejecuci&oacute;n en campo, incluyendo la coordinaci&oacute;n administrativa de obra y la gesti&oacute;n de licitaciones y adquisiciones.</p>
+            <p class="text-md mb-4 leading-relaxed">Me apasiona el aprendizaje autodidacta, lo que me ha permitido adquirir habilidades en desarrollo web a trav&eacute;s de MOOCs y tutoriales. Uno de mis principales pasatiempos es correr, habiendo completado hasta la fecha 7 maratones, con un r&eacute;cord personal de 3 horas y 46 minutos. Ambas caracter&iacute;sticas destacan dos de mis principales valores: el compromiso y la disciplina.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="body-font text-slate-800 dark:text-neutral-300 ">
+  <section class="text-sm uppercase font-mono tracking-tighter font-light">
   <div class="container mx-auto flex flex-col px-5 py-24">
     <div class="mx-auto xl:w-4/6">
-      <h2 class="pb-5 text-sm font-bold text-slate-800 dark:text-neutral-300 uppercase tracking-tight font-mono">Experiencia
+      <h2 class="pb-5 text-lg font-semibold tracking-tight font-sans normal-case">Experiencia
         Profesional</h2>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium group-hover:text-gray-400">Supervisor de Construcción | Industrial Afiliada, S.A.
-          de C.V. </span><br><span class="text-md font-normal group-hover:text-gray-400">Desde 23/05/2018</span><br>En este puesto he ampliado mi experiencia como supervisor de construcción, supervisando remodelaciones y nuevas construcciones de Centros de Atención a Clientes (CACs) de Telcel en varias regiones del país. Destacan el cambio de imagen del <!-- delicias-modal toggle --><a
-          class="underline underline-offset-4 hover:text-fuchsia-950 hover:bg-red-300 dark:hover:bg-transparent dark:hover:text-red-400 hover:cursor-pointer hover:no-underline"
-          data-modal-target="delicias-modal" data-modal-toggle="delicias-modal">CAC Delicias I</a> en Delicias, Chihuahua, y la construcción del <!-- tepeyac-modal toggle --><a
-          class="underline underline-offset-4 hover:text-fuchsia-950 hover:bg-red-300 dark:hover:bg-transparent dark:hover:text-red-400 hover:cursor-pointer hover:no-underline"
-          data-modal-target="tepeyac-modal" data-modal-toggle="tepeyac-modal">CAC Tepeyac</a> en Ciudad de México.
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">Industrial Afiliada, S.A.
+          de C.V._2018/2024</span><br><span class="font-normal text-slate-950 dark:text-slate-50">Supervisor de Mantenimiento y Construcci&oacute;n</span><br>En este puesto he ampliado mi experiencia como supervisor de construcci&oacute;n, supervisando remodelaciones y nuevas construcciones de Centros de Atenci&oacute;n a Clientes (CACs) de Telcel en varias regiones del pa&iacute;s. Destacan el cambio de imagen del <!-- delicias-modal toggle --><a
+          class="font-normal cursor-pointer text-slate-950 bg-gradient-to-r from-neutral-800 to-neutral-800 bg-[length:0_100%] bg-no-repeat transition-all duration-500 hover:bg-[length:100%_100%] hover:text-white dark:bg-gradient-to-r dark:from-white dark:to-white dark:text-slate-50 dark:hover:text-black"
+          data-modal-target="delicias-modal" data-modal-toggle="delicias-modal">CAC Delicias I</a> en Delicias,
+        Chihuahua, y la construcci&oacute;n del <!-- tepeyac-modal toggle --><a
+          class="font-normal cursor-pointer text-slate-950 bg-gradient-to-r from-neutral-800 to-neutral-800 bg-[length:0_100%] bg-no-repeat transition-all duration-500 hover:bg-[length:100%_100%] hover:text-white dark:bg-gradient-to-r dark:from-white dark:to-white dark:text-slate-50 dark:hover:text-black"
+          data-modal-target="tepeyac-modal" data-modal-toggle="tepeyac-modal">CAC Tepeyac</a> en Ciudad de M&eacute;xico.
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Especialista Comprador | Dirección de Abastecimiento
-          Estratégico del Tecnológico de Monterrey</span><br><span class="text-md font-normal">01/10/2011 -
-          15/09/2014</span><br>El puesto se centraba en proveer a la Dirección de Construcción de Sorteos Tec con proveedores de productos y servicios para las residencias del Primer Premio del Tradicional Sorteo Tec, así como supervisar otros proyectos de construcción y mantenimiento del Sorteo Tec.
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">Direcci&oacute;n de Abastecimiento Estrat&eacute;gico del Tecnol&oacute;gico de Monterrey_2011/2014</span><br><span class="font-normal text-slate-950 dark:text-slate-50">Especialista Comprador</span><br>El puesto se centraba en proveer a la Direcci&oacute;n de Construcci&oacute;n de Sorteos Tec con
+        proveedores de productos y servicios para las residencias del Primer Premio del Tradicional Sorteo Tec, as&iacute; como
+        supervisar otros proyectos de construcci&oacute;n y mantenimiento del Sorteo Tec.
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Arquitecto Especialista | Dirección de Construcción de
-          Sorteos Tec</span><br><span class="text-md font-normal">01/08/2010 - 30/09/2011 & 01/05/2005 -
-          31/08/2007</span><br>El puesto implicaba la preparación y gestión de la información necesaria para los concursos de asignación de proveedores para construir la residencia del Primer Premio del Tradicional Sorteo Tec.
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">Direcci&oacute;n de Construcci&oacute;n de Sorteos Tec_2010/2011 & 2005/2007</span><br><span class="font-normal text-slate-950 dark:text-slate-50">Arquitecto Especialista</span><br>El puesto implicaba la preparaci&oacute;n y gesti&oacute;n de la informaci&oacute;n necesaria para los concursos de asignaci&oacute;n de proveedores para construir la residencia del Primer Premio del Tradicional Sorteo Tec.
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Administrador de Propiedad | Marina Mia Condos,
-          A.C.</span><br><span class="text-md font-normal">01/02/2009 - 31/07/2010</span><br>Coordinaba las necesidades de los usuarios y dueños de un condominio de 56 unidades en Puerto Aventuras, Playa del Carmen, QR, además de supervisar el equipo de mantenimiento y seguridad del edificio y administrar las cuotas.
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">Marina Mia Condos,
+          A.C._2009/2010</span><br><span class="font-normal text-slate-950 dark:text-slate-50">Administrador de Propiedad</span><br>Coordinaba las necesidades de los usuarios y due&ntilde;os de un condominio de 56 unidades en Puerto Aventuras, Playa del Carmen, QR, adem&aacute;s de supervisar el equipo de mantenimiento y seguridad del edificio y administrar las cuotas.
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Coordinador Administrativo | Órigo
-          Developers</span><br><span class="text-md font-normal">01/09/2007 - 31/12/2009</span><br>El rol se enfocaba en el control presupuestario y contractual de la construcción de un edificio en condominio en Playacar, Playa del Carmen, QR. Además, incluía labores de supervisión y gestión de contratistas.
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">&oacute;rigo
+          Developers_2007/2009</span><br><span class="font-normal text-slate-950 dark:text-slate-50">Coordinador Administrativo</span><br>El rol se enfocaba en el control presupuestario y contractual de la construcci&oacute;n de un edificio en condominio en Playacar, Playa del Carmen, QR. Adem&aacute;s, inclu&iacute;a labores de supervisi&oacute;n y gesti&oacute;n de contratistas.
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Profesionista de Apoyo (Arquitecto) | Departamento de
-          Proyectos Arquitectónicos del Tecnológico de Monterrey Campus Monterrey</span><br><span
-          class="text-md font-normal">15/01/2001 - 31/12/2003</span><br>Me desempeñé en proyectos de remodelación, adecuaciones y mantenimiento de instalaciones en el Campus, con participación en la extensión del Campus Norte, incluyendo el diseño y supervisión de un comedor para 200 personas.
+      <p class="mb-4 text-md whitespace-normal "><span
+        class="text-slate-500 dark:text-neutral-400">Grupo MAC (Monta&ntilde;o Arquitectos Consultores)_2004</span><br><span
+        class="font-normal text-slate-950 dark:text-slate-50">Supervisor de Obra</span><br>Realic&eacute; la supervisi&oacute;n de construci&oacute;n de las oficinas en Monterrey de Daimler-Chrysler Financial Services ubicadas en San Pedro Garza Garc&iacute;a, desde la etapa de trazo y nivelaci&oacute;n hasta la entrega al cliente.
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Coordinador de Proyecto | Consorcio Americano de
-          Proyectos y Construcción, S.A.</span><br><span class="text-md font-normal">05/02/2000 -
-          31/12/2000</span><br>El rol se enfocaba en administrar y generar información sobre el proyecto de una nave industrial en Ébano, SLP, incluyendo visitas de obra para revisar avances con la supervisión interna del cliente.
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">Departamento de
+          Proyectos Arquitect&oacute;nicos del Tecnol&oacute;gico de Monterrey Campus Monterrey_2001/2003</span><br><span
+          class="font-normal text-slate-950 dark:text-slate-50">Profesionista de Apoyo (Arquitecto)</span><br>Me desempe&ntilde;&eacute; en proyectos de remodelaci&oacute;n, adecuaciones y mantenimiento de instalaciones en el Campus, con participaci&oacute;n en la extensi&oacute;n del Campus Norte, incluyendo el dise&ntilde;o y supervisi&oacute;n de un comedor para 200 personas.
+      </p>
+      <p class="mb-4 text-md whitespace-normal "><span
+          class="text-slate-500 dark:text-neutral-400">Consorcio Americano de
+          Proyectos y Construcci&oacute;n, S.A. de C.V._2000</span><br><span class="font-normal text-slate-950 dark:text-slate-50">Coordinador de Proyecto</span><br>El rol se enfocaba en administrar y generar informaci&oacute;n sobre el proyecto de una nave industrial en &eacute;bano, SLP, incluyendo visitas de obra para revisar avances con la supervisi&oacute;n interna del cliente.
       </p>
     </div>
     <div class="text-end">
@@ -226,10 +233,10 @@
           </div>
         </div>
         <!-- Modal footer -->
-        <div class="items-center justify-between p-4 pr-5 md:p-5 md:pr-6 dark:border-neutral-600">
-          <h3 class="text-md font-medium text-gray-900 dark:text-white">CAC Delicias I</h3>
-          <p class="text-sm md:text-md font-light">Delicias, Chihuahua</p>
-          <p class="text-xs md:text-sm font-light">Duración: octubre de 2022-marzo de 2023</p>
+        <div class="uppercase items-center justify-between p-4 pr-6 md:p-5 md:pr-6 font-mono font-light tracking-tighter">
+          <h3 class="font-sans text-md font-semibold text-gray-900 dark:text-white normal-case tracking-tight">CAC Delicias I</h3>
+          <p class="text-sm">Delicias, Chihuahua</p>
+          <p class="text-xs">Duraci&oacute;n: 10_2022/03_2023</p>
         </div>
       </div>
     </div>
@@ -329,37 +336,37 @@
           </div>
         </div>
         <!-- Modal fotter -->
-        <div class=" items-center justify-between p-4 pr-6 md:p-5 md:pr-6 dark:border-gray-600">
-          <h3 class="text-md font-medium text-gray-900 dark:text-white">CAC Tepeyac</h3>
-          <p class="text-sm md:text-md font-light">Parque Tepeyac, Gustavo A. Madero, CDMX</p>
-          <p class="text-xs md:text-sm font-light">Duración: agosto-noviembre de 2023</p>
+        <div class="uppercase items-center justify-between p-4 pr-6 md:p-5 md:pr-6 font-mono font-light tracking-tighter">
+          <h3 class="font-sans text-md font-semibold text-gray-900 dark:text-white normal-case tracking-tight">CAC Tepeyac</h3>
+          <p class="text-sm">Parque Tepeyac, Gustavo A. Madero, CDMX</p>
+          <p class="text-xs">Duraci&oacute;n: 08/11_2023</p>
         </div>
       </div>
     </div>
   </div>
 
-  <section class="body-font text-slate-800 dark:text-neutral-300 ">
+  <section class="text-sm uppercase font-mono tracking-tighter font-light">
   <div class="container mx-auto flex flex-col px-5 py-24">
     <div class="xl:mx-auto lg:ml-0 xl:w-4/6">
-      <h2 class="pb-5 text-sm font-bold text-slate-800 dark:text-neutral-300 uppercase tracking-tight font-mono">Desarrollo
+      <h2 class="pb-5 text-lg font-semibold tracking-tight font-sans normal-case">Desarrollo
         Profesional</h2>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Habilidades Profesionales: Negociación y Liderazgo</span><br>Tecnológico de Monterrey/edX (MOOC) | 2020
+      <p class="mb-4 text-md whitespace-normal text-slate-950 dark:text-slate-50">Habilidades Profesionales: Negociación y Liderazgo<br><span
+        class="text-slate-500 dark:text-neutral-400">Tecnológico de Monterrey/edX (MOOC)_2020</span>
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-        class="font-roboto tracking-tight text-xl font-medium">Managing Innovation and Design Thinking</span><br>HEC Paris/Coursera (MOOC) | 2020
+      <p class="mb-4 text-md whitespace-normal text-slate-950 dark:text-slate-50">Managing Innovation and Design Thinking<br><span
+        class="text-slate-500 dark:text-neutral-400">HEC Paris/Coursera (MOOC)_2020</span>
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Comunicación Efectiva y Asertiva</span><br>Centro de Liderazgo Innovación y Creatividad | 2020
+      <p class="mb-4 text-md whitespace-normal text-slate-950 dark:text-slate-50">Comunicación Efectiva y Asertiva<br><span
+          class="text-slate-500 dark:text-neutral-400">Centro de Liderazgo Innovación y Creatividad_2020</span>
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Conducción de Equipos de Alto Desempeño</span><br>Tecnológico de Monterrey | 2020
+      <p class="mb-4 text-md whitespace-normal text-slate-950 dark:text-slate-50">Conducción de Equipos de Alto Desempeño<br><span
+          class="text-slate-500 dark:text-neutral-400">Tecnológico de Monterrey_2020</span>
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-          class="font-roboto tracking-tight text-xl font-medium">Desarrollo de Habilidades Gerenciales</span><br>Centro de Liderazgo Innovación y Creatividad | 2019
+      <p class="mb-4 text-md whitespace-normal text-slate-950 dark:text-slate-50">Desarrollo de Habilidades Gerenciales<br><span
+          class="text-slate-500 dark:text-neutral-400">Centro de Liderazgo Innovación y Creatividad_2019</span>
       </p>
-      <p class="mb-4 text-md whitespace-normal font-light text-gray-900 dark:text-gray-200"><span
-        class="font-roboto tracking-tight text-xl font-medium">Comunicación Efectiva</span><br>Taller con LEGO | 2018
+      <p class="mb-4 text-md whitespace-normal text-slate-950 dark:text-slate-50">Comunicación Efectiva<br><span
+        class="text-slate-500 dark:text-neutral-400">Taller con LEGO_2018</span>
     </p>
     </div>
     <div class="text-end">
@@ -368,33 +375,33 @@
   </div>
   </section>
 
-  <section class="body-font text-slate-800 dark:text-neutral-300 ">
+  <section class="text-sm uppercase font-mono tracking-tighter font-light">
   <div class="container mx-auto flex flex-col px-5 py-24">
     <div class="xl:mx-auto lg:ml-0 xl:w-4/6">
-      <h2 class="pb-5 text-sm font-bold text-slate-800 dark:text-neutral-300 uppercase tracking-tight font-mono">Intereses
+      <h2 class="pb-5 text-lg font-semibold tracking-tight font-sans normal-case">Intereses
       </h2>
       <p
-        class="mb-4 text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight">
+        class="mb-4 whitespace-normal tracking-tight">
         <span class="">Correr</span>
       </p>
       <p
-        class="mb-4 text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight">
+        class="mb-4 whitespace-normal tracking-tight">
         <span class="">Cine</span>
       </p>
       <p
-        class="mb-4 text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight">
+        class="mb-4 whitespace-normal tracking-tight">
         <span class="">Tenis</span>
       </p>
       <p
-        class="mb-4 text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight">
+        class="mb-4 whitespace-normal tracking-tight">
         <span class="">Aprender</span>
       </p>
       <p
-        class="mb-4 text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight">
-        <span class="">Música</span>
+        class="mb-4 whitespace-normal tracking-tight">
+        <span class="">M&uacute;sica</span>
       </p>
       <p
-        class="mb-4 text-lg whitespace-normal font-light text-gray-900 dark:text-gray-200 font-roboto tracking-tight">
+        class="mb-4 whitespace-normal tracking-tight">
         <span class="">Desarrollo Web</span>
       </p>
     </div>
@@ -404,9 +411,13 @@
   </div>
   </section>
 
+<<<<<<< HEAD
 </main>
 
   <section class="body-font text-slate-800 dark:text-neutral-300 ">
+=======
+  <section class="text-sm uppercase font-mono tracking-tighter font-light">
+>>>>>>> 45e2ed51f3eb9acab27ed381ea336956eb93a7b5
     <div class="container mx-auto flex flex-col px-5 py-24">
       <div class="xl:mx-auto lg:ml-0 xl:w-4/6">
         <div class="grid gap-4 grid-cols-2 grid-rows-3 md:grid-cols-4 lg:grid-cols-4 font-light text-sm">
@@ -414,39 +425,39 @@
             <img class="aspect-square" src="img/insta01.JPG" alt="">
           </div>
           <div class="flex flex-col mt-auto">
-              <p class="font-semibold">Guggenheim Museum</p>
-              <p>NYC, EU</p>
+              <p class="font-semibold normal-case font-sans">Guggenheim Museum</p>
+              <p>NYC, E.U.</p>
               <p class="text-xs">2013</p>
-          </div>
-          <div class="flex flex-col mt-auto">
-            <img class="aspect-square" src="img/insta02.JPG" alt="">
-          </div>
-          <div class="flex flex-col mt-auto">
-            <p class="font-semibold">Lower Manhattan</p>
-            <p>NYC, EU</p>
-            <p class="text-xs">2013</p>
-          </div>
-          <div class="flex flex-col mt-auto">
-            <img class="aspect-square" src="img/insta06.JPG" alt="">
-          </div>
-          <div class="flex flex-col mt-auto">
-            <p class="font-semibold">Museo de Arte Contemporáneo</p>
-            <p>Monterrey, N.L.</p>
-            <p class="text-xs">2017</p>
           </div>
           <div class="flex flex-col mt-auto">
             <img class="aspect-square" src="img/insta12.JPG" alt="">
           </div>
           <div class="flex flex-col mt-auto">
-            <p class="font-semibold">Angel de la Independencia</p>
-            <p>Cuauhtémoc, Ciudad de México</p>
+            <p class="font-semibold normal-case font-sans">Angel de la Independencia</p>
+            <p>Cuauht&eacute;moc, CDMX</p>
             <p class="text-xs">2023</p>
+          </div>
+          <div class="flex flex-col mt-auto">
+            <img class="aspect-square" src="img/insta06.JPG" alt="">
+          </div>
+          <div class="flex flex-col mt-auto">
+            <p class="font-semibold normal-case font-sans">Museo de Arte Contempor&aacute;neo</p>
+            <p>Monterrey, N.L.</p>
+            <p class="text-xs">2017</p>
+          </div>
+          <div class="flex flex-col mt-auto">
+            <img class="aspect-square" src="img/insta02.JPG" alt="">
+          </div>
+          <div class="flex flex-col mt-auto">
+            <p class="font-semibold normal-case font-sans">Lower Manhattan</p>
+            <p>NYC, E.U.</p>
+            <p class="text-xs">2013</p>
           </div>
           <div class="flex flex-col mt-auto">
             <img class="aspect-square" src="img/insta10.JPG" alt="">
           </div>
           <div class="flex flex-col mt-auto">
-            <p class="font-semibold">Foro Boca</p>
+            <p class="font-semibold normal-case font-sans">Foro Boca</p>
             <p>Boca del Rio, Ver.</p>
             <p class="text-xs">2019</p>
           </div>
@@ -454,15 +465,15 @@
             <img class="aspect-square" src="img/insta11.JPG" alt="">
           </div>
           <div class="flex flex-col mt-auto">
-            <p class="font-semibold">Mercado Michoacán</p>
-            <p>Cuauhtémoc, Ciudad de México</p>
+            <p class="font-semibold normal-case font-sans">Mercado Michoac&aacute;n</p>
+            <p>Cuauht&eacute;moc, CDMX</p>
             <p class="text-xs">2023</p>
           </div>
           <div class="flex flex-col mt-auto">
             <img class="aspect-square" src="img/insta07.JPG" alt="">
           </div>
           <div class="flex flex-col mt-auto">
-            <p class="font-semibold">Parque Fundidora</p>
+            <p class="font-semibold normal-case font-sans">Parque Fundidora</p>
             <p>Monterrey, N.L.</p>
             <p class="text-xs">2018</p>
           </div>
@@ -470,7 +481,7 @@
             <img class="aspect-square" src="img/insta08.JPG" alt="">
           </div>
           <div class="flex flex-col mt-auto">
-              <p class="font-semibold">Tecnológico de Monterrey</p>
+              <p class="font-semibold normal-case font-sans">Tecnológico de Monterrey</p>
               <p>Monterrey, N.L.</p>
               <p class="text-xs">2018</p>
           </div>
@@ -479,10 +490,10 @@
     </div>
   </section>
 
-  <footer class="p-4 text-sm lg:text-sm text-gray-500 bg-gray-50 dark:text-gray-200 dark:bg-neutral-800 bottom-0 left-0 w-full z-10 ">
+  <footer class="p-4 font-mono uppercase text-sm text-gray-700 bg-gray-50 dark:text-gray-200 dark:bg-neutral-800 bottom-0 left-0 w-full z-10 ">
     <div class="py-2 px-4 md:flex items-center w-full md:justify-between">
-      <span class="text-gray-500 sm:text-center">© 2024 Edgar A. Espinosa</span>
-      <div class="flex mt-4 space-x-4 sm:justify-center md:mt-0">
+      <span class="sm:text-center tracking-tighter text-xs">© 2024 Dise&ntilde;ada y realizada por Edgar A. Espinosa</span>
+      <div class="flex mt-4 space-x-4 md:mt-0">
         <a href="tel:8182703324" class="text-gray-400 hover:text-gray-700 dark:hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
             viewBox="0 0 16 16">
